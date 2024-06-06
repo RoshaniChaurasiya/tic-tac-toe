@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+body {
+  font: 16px 'Century Gothic', Futura, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #a8fbb0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: #ff0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  background: rgb(194, 96, 116);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.game-board {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.status {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  background: #79a5f7;
+  border: none;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 64px;
+  height: 64px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  width: 64px;
+  transition: background 0.3s;
+  color: #fff;
+}
+
+.square.highlight {
+  background: #ff0;
+}
+
+.square:hover {
+  background: #93cef6;
+  cursor: pointer;
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4284fe;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  background-color: #64bdf9;
+}
+
+.congratulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.congratulations img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+button:focus {
+  outline: none;
 }
