@@ -44,11 +44,11 @@ function Board() {
   const isDraw = squares.every((square) => square !== null) && !winner;
   const isStart = squares.every((square) => square === null);
   const status = winner
-    ? `Congratulating!: ${winner}`
+    ? `Congratulation!: ${winner}`
     : isDraw
     ? 'Draw'
     : isStart
-    ? 'Start the Game'
+    ? 'Start The Game'
     : `Next player: ${isXNext ? 'X' : 'O'}`;
 
   return (
