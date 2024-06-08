@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Square from './Square';
 import happyGif from './img/happy.gif';
+import oopsGif from './img/opps.gif';
 
 function Board() {
   const initialSquares = Array(9).fill(null);
@@ -71,13 +72,14 @@ function Board() {
         {renderSquare(8)}
       </div>
       {(winner || isDraw) && (
-        <div className="congratulations">
-          {winner && <img src={happyGif} alt="Congratulations GIF" />}
-          <button className="reset-button" onClick={handleReset}>
-            Play Again
-          </button>
-        </div>
-      )}
+          <div className="congratulations">
+            {winner && <img src={happyGif} alt="Congratulations GIF" />}
+            {isDraw && <img src={oopsGif} alt="Oops, it's a Draw!" />}
+            <button className="reset-button" onClick={handleReset}>
+              Play Again
+            </button>
+          </div>
+        )}
     </div>
   );
 }
